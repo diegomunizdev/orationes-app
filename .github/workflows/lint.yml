@@ -2,7 +2,7 @@ name: Status check
 
 on:
   push:
-    branches: [main, develop]
+    branches: ['FEATURE*', 'DEBIT*', 'REFACTOR*', 'BUG*', 'FIX*']
 
 jobs:
   typecheck:
