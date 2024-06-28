@@ -5,7 +5,7 @@ import PACKAGE_JSON from '../package.json';
 import LayoutProvider from './components/providers/Layout/Layout.provider';
 import Routes from './components/views/Routes';
 
-const Main = (): JSX.Element => {
+function Main(): JSX.Element {
   console.info(PACKAGE_JSON.name, '\x1b[32m' + `v${PACKAGE_JSON.version}`);
 
   return (
@@ -19,6 +19,6 @@ const Main = (): JSX.Element => {
       </LayoutProvider>
     </ConfigCatProvider>
   );
-};
+}
 
 export default Main;

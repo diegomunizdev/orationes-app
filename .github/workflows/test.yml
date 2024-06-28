@@ -2,7 +2,7 @@ name: Tests
 
 on:
   push:
-    branches: ['FEATURE*', 'DEBIT*', 'REFACTOR*', 'BUG*', 'FIX*']
+    branches: [develop, 'FEATURE*', 'DEBIT*', 'REFACTOR*', 'BUGFIX*', 'HOTFIX*']
 
 jobs:
   tests:
