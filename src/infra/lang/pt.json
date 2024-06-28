@@ -1,0 +1,13 @@
+{
+  "app": "Orationes.",
+  "loading": {
+    "searchingReadings": "Buscando leituras..."
+  },
+  "errors": {
+    "readings": {
+      "title": "Erro ao obter leituras",
+      "subtitle": "Não foi possível obter as leituras do dia. Por favor, tente novamente.",
+      "actionTitle": "Obter leituras"
+    }
+  }
+}

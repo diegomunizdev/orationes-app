@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Orationes",
+    "slug": "orationes-app",
+    "version": "1.0.0-alpha",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.diegomunizdev.orationesapp"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5687a44f-6b1d-4479-a2ae-e90777d57097"
+      }
+    },
+    "owner": "diegomunizdev"
+  }
+}

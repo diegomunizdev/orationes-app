@@ -1,0 +1,66 @@
+name: Status check
+
+on:
+  push:
+    branches: [main, develop]
+
+jobs:
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.2.0
+        with:
+          node-version: 20.x
+      - name: run the typecheck
+        run: |
+          yarn
+          yarn typecheck
+
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.2.0
+        with:
+          node-version: 20.x
+      - name: run the prettier
+        run: |
+          yarn
+          yarn lint:prettier
+
+  eslint:
+    name: ESlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.2.0
+        with:
+          node-version: 20.x
+      - name: run the eslint
+        run: |
+          yarn
+          yarn lint:eslint
+
+  status_check_result:
+    if: ${{ always() }}
+    name: Status check result
+    needs: [typecheck, prettier, eslint]
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          if [[ "${{needs.typecheck.result}}" == "success" && "${{needs.prettier.result}}" == "success" && "${{needs.eslint.result}}" == "success" ]]; then
+            echo "All checks passed"
+            exit 0
+          else
+            echo "Some check failed"
+            exit 1
+          fi
