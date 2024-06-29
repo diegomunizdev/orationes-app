@@ -11,6 +11,7 @@
         "EXPO_PUBLIC_CONFIG_CAT_KEY": "configcat-sdk-1/PpbcCO8N2E6NqNxRy_yOtQ/BytcgeOg5kKQwE6sMJ2eJg"
       },
       "android": {
+        "simulator": true,
         "buildType": "apk"
       }
     },
