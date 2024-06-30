@@ -1,3 +1,4 @@
+import 'expo-dev-client';
 import './infra/lang/i18n';
 import { ConfigCatProvider, PollingMode } from 'configcat-react';
 
@@ -8,9 +9,11 @@ import Routes from './components/views/Routes';
 const Main = (): JSX.Element => {
   console.info(PACKAGE_JSON.name, '\x1b[32m' + `v${PACKAGE_JSON.version}`);
 
+  const configcatKey = process.env.EXPO_PUBLIC_CONFIG_CAT_KEY;
+
   return (
     <ConfigCatProvider
-      sdkKey={process.env.EXPO_PUBLIC_CONFIG_CAT_KEY ?? ''}
+      sdkKey={configcatKey ?? ''}
       pollingMode={PollingMode.AutoPoll}
       options={{ pollIntervalSeconds: 1 }}
     >

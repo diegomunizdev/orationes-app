@@ -8,7 +8,7 @@ const mockAction = jest.fn();
 const mockProps: SettingsOptionProps = {
   title: 'title',
   subtitle: 'subtitle',
-  icon: 'person',
+  icon: 'chevron-down',
   action: mockAction,
 };
 

@@ -1,0 +1,28 @@
+name: EAS build development
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Install dependencies and build eas
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Setup Expo and EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Build on EAS development
+        run: eas build -p android -e development --non-interactive
