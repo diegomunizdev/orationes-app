@@ -32,8 +32,12 @@ export default function ModalFontSizeTemplate({
       transparent={true}
       style={styles.modal}
       onRequestClose={onClose}
+      testID="orationes-ModalFontSizeTemplate-Modal"
     >
-      <View style={styles.content}>
+      <View
+        style={styles.content}
+        testID="orationes-ModalFontSizeTemplate-content"
+      >
         <ContentFontSizeOrganism
           fontSize={fontSize}
           handleFontSize={handleFontSize}

@@ -1,8 +1,8 @@
 import { ScrollView, StyleSheet } from 'react-native';
 
-import { useNavigation } from '@react-navigation/native';
 import Header from '../../shared/Header/Header';
 import SettingsOptionOrganism from '../../organisms/Settings/SettingsOption/SettingsOptionOrganism';
+import { useNavigation } from '../../../application/contexts/navigation/navigation.context';
 
 export default function SettingsTemplate(): JSX.Element {
   const navigation = useNavigation();
@@ -18,13 +18,13 @@ export default function SettingsTemplate(): JSX.Element {
       icon: 'invert-colors',
       title: 'Aparência',
       subtitle: 'Altere o tema e o tamanho da fonte.',
-      action: () => navigation.navigate('Appearance' as never),
+      action: () => navigation?.navigate('Appearance' as never),
     },
     {
       icon: 'information-outline',
       title: 'Informações do aplicativo',
       subtitle: 'Versão, etc.',
-      action: () => navigation.navigate('InformationApp' as never),
+      action: () => navigation?.navigate('InformationApp' as never),
     },
   ];
 
@@ -32,9 +32,9 @@ export default function SettingsTemplate(): JSX.Element {
     <ScrollView
       style={styles.container}
       contentContainerStyle={styles.container}
-      testID="SettingsView-View"
+      testID="orationes-SettingsTemplate-ScrollView"
     >
-      <Header title="Configurações" goBack={() => navigation.goBack()} />
+      <Header title="Configurações" goBack={() => navigation?.goBack()} />
       {options.map((item, index: number) => (
         <SettingsOptionOrganism
           key={index}

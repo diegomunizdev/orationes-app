@@ -1,4 +1,4 @@
-import { Modal, View } from 'react-native';
+import { Modal, StyleSheet, View } from 'react-native';
 import ContentThemeOrganism from '../../../../organisms/Settings/Appearance/ContentTheme/ContentThemeOrganism';
 
 export type ModalThemeTemplateProps = {
@@ -12,20 +12,28 @@ export default function ModalThemeTemplate({
   onClose,
   handleTheme,
 }: ModalThemeTemplateProps): JSX.Element {
+  const styles = StyleSheet.create({
+    modal: {
+      borderRadius: 30,
+    },
+    content: {
+      flex: 1,
+      justifyContent: 'flex-end',
+      borderRadius: 50,
+    },
+  });
   return (
     <Modal
       animationType="slide"
       visible={visible}
       transparent={true}
-      style={{ borderRadius: 30 }}
+      style={styles.modal}
       onRequestClose={onClose}
+      testID="orationes-ModalThemeTemplate-Modal"
     >
       <View
-        style={{
-          flex: 1,
-          justifyContent: 'flex-end',
-          borderRadius: 50,
-        }}
+        style={styles.content}
+        testID="orationes-ModalThemeTemplate-content"
       >
         <ContentThemeOrganism handleTheme={handleTheme} onClose={onClose} />
       </View>

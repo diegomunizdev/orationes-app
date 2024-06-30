@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
 import { useNavigation } from '../../../../application/contexts/navigation/navigation.context';
@@ -7,12 +6,16 @@ import Header from '../../../shared/Header/Header';
 import AppearanceOptionOrganism from '../../../organisms/Settings/Appearance/AppearanceOption/AppearanceOptionOrganism';
 import ModalThemeTemplate from './ModalTheme/ModalThemeTemplate';
 import ModalFontSizeTemplate from './ModalTheme/ModalFontSizeTemplate';
+import { useAppearanceContext } from '../../../../application/contexts/settings/appearance/appearance.context';
 
 export default function AppearanceTemplate(): JSX.Element {
-  const [modalVisibleTheme, setModalVisibleTheme] = useState<boolean>(false);
-  const [modalVisibleFontSize, setModalVisibleFontSize] =
-    useState<boolean>(false);
   const navigation = useNavigation();
+  const {
+    modalVisibleTheme,
+    handleModalTheme,
+    modalVisibleFontSize,
+    handleModalFontSize,
+  } = useAppearanceContext();
   const { handleTheme, handleFontSize } = useLayoutContext();
 
   const styles = StyleSheet.create({
@@ -25,22 +28,26 @@ export default function AppearanceTemplate(): JSX.Element {
       icon: 'theme-light-dark',
       title: 'Tema',
       subtitle: 'Escolha entre claro e escuro.',
-      action: () => setModalVisibleTheme((prevState) => !prevState),
+      action: () => handleModalTheme(),
     },
     {
       icon: 'format-size',
       title: 'Tamanho da fonte',
       subtitle: 'Escolha o tamanho da fonte dos textos.',
-      action: () => setModalVisibleFontSize((prevState) => !prevState),
+      action: () => handleModalFontSize(),
     },
   ];
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.content}
+      testID="orationes-AppearanceTemplate-ScrollView"
+    >
       <ModalThemeTemplate
         visible={modalVisibleTheme}
         onClose={() => {
-          setModalVisibleTheme((prevState) => !prevState);
+          handleModalTheme();
         }}
         handleTheme={handleTheme}
       />
@@ -48,7 +55,7 @@ export default function AppearanceTemplate(): JSX.Element {
       <ModalFontSizeTemplate
         visible={modalVisibleFontSize}
         onClose={() => {
-          setModalVisibleFontSize((prevState) => !prevState);
+          handleModalFontSize();
         }}
         handleFontSize={handleFontSize}
       />
