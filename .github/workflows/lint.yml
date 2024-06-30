@@ -52,7 +52,7 @@ jobs:
 
   status_check_result:
     if: ${{ always() }}
-    name: Result
+    name: Checks result
     needs: [typecheck, prettier, eslint]
     runs-on: ubuntu-latest
     steps:
