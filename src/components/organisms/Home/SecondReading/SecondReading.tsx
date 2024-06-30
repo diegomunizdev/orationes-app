@@ -27,7 +27,7 @@ export default function SecondReading({
     >
       <View style={{ gap: 15, flex: 1 }}>
         <TextLiturgy valueSize={fontSize} style={{ color: colors.text }}>
-          {`Primeira leitura: ${secondReading?.referencia}`}
+          {`Segunda leitura: ${secondReading?.referencia}`}
         </TextLiturgy>
         <TextLiturgy
           valueSize={fontSize}

@@ -1,9 +1,7 @@
 name: EAS build production
 
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
+
 jobs:
   build:
     name: Install dependencies and build eas
