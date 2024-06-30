@@ -1,13 +1,9 @@
 {
   "name": "orationes-app",
-  "version": "1.0.1-alpha",
+  "version": "1.0.0-alpha",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start:dev": "expo start",
-    "eas:dev": "eas build -p android --profile development",
-    "eas:prd": "eas build -p android --profile production",
-    "android": "expo run:android",
-    "android:local": "expo run:android --variant release",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
     "typecheck": "tsc --noEmit",

@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Development
+  homolog:
+    name: Homolog
     runs-on: ubuntu-latest
-    environment: development
+    environment: homolog
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -26,5 +26,5 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: Build on EAS development
-        run: eas build -p android -e development --non-interactive
+      - name: Build on EAS homolog
+        run: eas build -p android -e homolog --non-interactive

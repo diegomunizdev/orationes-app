@@ -1,4 +1,4 @@
-name: Status check
+name: Checks
 
 on:
   push:
@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.2.0
+        uses: actions/setup-node@v4
         with:
           node-version: 20.x
       - name: run the typecheck
@@ -25,9 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.2.0
+        uses: actions/setup-node@v4
         with:
           node-version: 20.x
       - name: run the prettier
@@ -40,9 +40,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.2.0
+        uses: actions/setup-node@v4
         with:
           node-version: 20.x
       - name: run the eslint
@@ -52,7 +52,7 @@ jobs:
 
   status_check_result:
     if: ${{ always() }}
-    name: Status check result
+    name: Checks result
     needs: [typecheck, prettier, eslint]
     runs-on: ubuntu-latest
     steps:
