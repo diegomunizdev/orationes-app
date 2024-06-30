@@ -1,11 +1,11 @@
-name: EAS build production
+name: EAS build
 
 on:
   workflow_dispatch:
 
 jobs:
   build:
-    name: Install dependencies and build eas
+    name: build production
     runs-on: ubuntu-latest
     environment: production
     steps:

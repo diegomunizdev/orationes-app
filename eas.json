@@ -14,6 +14,15 @@
         "buildType": "apk"
       }
     },
+    "homolog": {
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://liturgiadiaria.site",
+        "EXPO_PUBLIC_CONFIG_CAT_KEY": "configcat-sdk-1/PpbcCO8N2E6NqNxRy_yOtQ/BytcgeOg5kKQwE6sMJ2eJg"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
     "production": {
       "env": {
         "EXPO_PUBLIC_API_URL": "https://liturgiadiaria.site",
