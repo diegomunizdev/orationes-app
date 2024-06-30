@@ -1,6 +1,7 @@
 name: EAS build production
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
   build:
