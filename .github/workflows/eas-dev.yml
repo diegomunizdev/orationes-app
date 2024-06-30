@@ -1,4 +1,4 @@
-name: EAS Build
+name: EAS build development
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - develop
 jobs:
   build:
-    name: Install and build
+    name: Install dependencies and build eas
     runs-on: ubuntu-latest
     environment: development
     steps:
@@ -25,5 +25,5 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: Build on EAS
+      - name: Build on EAS development
         run: eas build -p android -e development --non-interactive

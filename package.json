@@ -1,6 +1,6 @@
 {
   "name": "orationes-app",
-  "version": "1.0.0-alpha",
+  "version": "1.0.1-alpha",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start:dev": "expo start",
@@ -12,7 +12,8 @@
     "lint:prettier": "prettier . --check",
     "typecheck": "tsc --noEmit",
     "test": "jest",
-    "reset": "rm -r node_modules && rm yarn.lock && yarn"
+    "reset": "rm -r node_modules && rm yarn.lock && yarn",
+    "ios": "expo run:ios"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
@@ -24,7 +25,7 @@
     "axios": "^1.7.2",
     "configcat-react": "^4.6.0",
     "date-fns": "^3.6.0",
-    "expo": "~51.0.16",
+    "expo": "~51.0.17",
     "expo-dev-client": "~4.0.19",
     "expo-status-bar": "~1.12.1",
     "i18next": "^23.11.5",
@@ -42,6 +43,7 @@
     "@testing-library/react-native": "^12.5.1",
     "@types/axios": "^0.14.0",
     "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.9",
     "@types/react": "~18.2.79",
     "eslint": "^8.57.0",
     "eslint-config-expo": "^7.0.0",

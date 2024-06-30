@@ -37,6 +37,7 @@ export default function LayoutProvider({
         } else if (scale === undefined) {
           setFontSize(() => FontSizeType.TEXT_14);
         }
+
         const value = JSON.stringify(fontSize);
         await AsyncStorage.setItem('fontSize', value);
       } catch (e) {
