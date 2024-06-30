@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    name: build production
+    name: Production
     runs-on: ubuntu-latest
     environment: production
     steps:
