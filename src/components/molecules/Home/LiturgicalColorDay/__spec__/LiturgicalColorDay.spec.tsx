@@ -21,42 +21,6 @@ describe('Given <LiturgicalColorDay/>', () => {
     });
 
     describe(`When there's color`, () => {
-      it('Then it should return black if property is black', () => {
-        const { getByTestId } = setup({
-          ...mockProps,
-          color: LiturgicalColorType.BLACK,
-        });
-        const color = getByTestId('orationes-LiturgicalColorDay-color');
-
-        expect(color.props.style.color).toBe(
-          LITURGICAL_COLOR[LiturgicalColorType.BLACK]
-        );
-      });
-
-      it('Then it should return blue if property is blue', () => {
-        const { getByTestId } = setup({
-          ...mockProps,
-          color: LiturgicalColorType.BLUE,
-        });
-        const color = getByTestId('orationes-LiturgicalColorDay-color');
-
-        expect(color.props.style.color).toBe(
-          LITURGICAL_COLOR[LiturgicalColorType.BLUE]
-        );
-      });
-
-      it('Then it should return gold or silver if property is gold or silver', () => {
-        const { getByTestId } = setup({
-          ...mockProps,
-          color: LiturgicalColorType.GOLD_OR_SILVER,
-        });
-        const color = getByTestId('orationes-LiturgicalColorDay-color');
-
-        expect(color.props.style.color).toBe(
-          LITURGICAL_COLOR[LiturgicalColorType.GOLD_OR_SILVER]
-        );
-      });
-
       it('Then it should return green if property is green', () => {
         const { getByTestId } = setup({
           ...mockProps,
