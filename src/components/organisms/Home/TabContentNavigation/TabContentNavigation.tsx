@@ -1,21 +1,22 @@
+import { lazy } from 'react';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import { DailyLiturgyProtocol } from '../../../../domain/protocols/DialyLiturgy';
-import PrimaryReading from '../PrimaryReading/PrimaryReading';
-import Psalms from '../Psalms/Psalms';
-import SecondReading from '../SecondReading/SecondReading';
-import Gospel from '../Gospel/Gospel';
+
+const PrimaryReading = lazy(() => import('../PrimaryReading/PrimaryReading'));
+const Psalms = lazy(() => import('../Psalms/Psalms'));
+const SecondReading = lazy(() => import('../SecondReading/SecondReading'));
+const Gospel = lazy(() => import('../Gospel/Gospel'));
 
 const Tab = createBottomTabNavigator();
 
 export type TabContentNavigationProps = {
   dailyLiturgy: DailyLiturgyProtocol | undefined;
-  fontSize: number;
 };
 
 export default function TabContentNavigation({
   dailyLiturgy,
-  fontSize,
 }: TabContentNavigationProps): JSX.Element {
   return (
     <Tab.Navigator
@@ -41,10 +42,7 @@ export default function TabContentNavigation({
         }}
       >
         {() => (
-          <PrimaryReading
-            primaryReading={dailyLiturgy?.primeiraLeitura}
-            fontSize={fontSize}
-          />
+          <PrimaryReading primaryReading={dailyLiturgy?.primeiraLeitura} />
         )}
       </Tab.Screen>
 
@@ -64,7 +62,7 @@ export default function TabContentNavigation({
           },
         }}
       >
-        {() => <Psalms psalms={dailyLiturgy?.salmo} fontSize={fontSize} />}
+        {() => <Psalms psalms={dailyLiturgy?.salmo} />}
       </Tab.Screen>
 
       {dailyLiturgy?.segundaLeitura ? (
@@ -84,12 +82,7 @@ export default function TabContentNavigation({
             },
           }}
         >
-          {() => (
-            <SecondReading
-              secondReading={dailyLiturgy?.segundaLeitura}
-              fontSize={fontSize}
-            />
-          )}
+          {() => <SecondReading secondReading={dailyLiturgy?.segundaLeitura} />}
         </Tab.Screen>
       ) : null}
 
@@ -108,7 +101,7 @@ export default function TabContentNavigation({
           },
         }}
       >
-        {() => <Gospel gospel={dailyLiturgy?.evangelho} fontSize={fontSize} />}
+        {() => <Gospel gospel={dailyLiturgy?.evangelho} />}
       </Tab.Screen>
     </Tab.Navigator>
   );

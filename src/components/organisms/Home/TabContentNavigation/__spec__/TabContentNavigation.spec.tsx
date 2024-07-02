@@ -12,11 +12,10 @@ import TabContentNavigation, {
 import { mockHomeProvider } from '../../../../../application/mocks/providers/HomeProvider.mock';
 import { NavigationContainer, useTheme } from '@react-navigation/native';
 import { LiturgicalColorType } from '../../../../../domain/enums/Liturgy';
-import { darkTheme, FontSizeType } from '../../../../../infra/theme/theme';
+import { darkTheme } from '../../../../../infra/theme/theme';
 
 const mockProps: TabContentNavigationProps = {
   dailyLiturgy: mockHomeProvider.data,
-  fontSize: FontSizeType.TEXT_24,
 };
 
 describe('Given <TabContentNavigation/>', () => {
@@ -80,7 +79,6 @@ describe('Given <TabContentNavigation/>', () => {
             texto: 'mock texto',
           },
         },
-        fontSize: FontSizeType.TEXT_24,
       });
       waitFor(() => {
         expect(queryByText('2º leitura')).toBeNull();

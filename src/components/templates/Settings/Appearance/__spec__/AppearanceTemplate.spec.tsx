@@ -24,10 +24,8 @@ jest.mock(
   }
 );
 
-const mockHandleFontSize = jest.fn();
 const mockHandleTheme = jest.fn();
 const mockHandleModalTheme = jest.fn();
-const mockHandleModalFontSize = jest.fn();
 
 describe('Given <AppearanceTemplate/>', () => {
   const setup = () =>
@@ -35,7 +33,6 @@ describe('Given <AppearanceTemplate/>', () => {
       <LayoutContext.Provider
         value={{
           ...mockLayoutProvider,
-          handleFontSize: mockHandleFontSize,
           handleTheme: mockHandleTheme,
         }}
       >
@@ -43,7 +40,6 @@ describe('Given <AppearanceTemplate/>', () => {
           value={{
             ...mockAppearanceContext,
             handleModalTheme: mockHandleModalTheme,
-            handleModalFontSize: mockHandleModalFontSize,
           }}
         >
           <AppearanceTemplate />
@@ -69,15 +65,6 @@ describe('Given <AppearanceTemplate/>', () => {
         btn.forEach((btnItem) => {
           fireEvent.press(btnItem);
           expect(mockHandleModalTheme).toHaveBeenCalled();
-        });
-      });
-
-      it('Then a function handleModalFontSize must be triggered', () => {
-        const { getAllByTestId } = setup();
-        const btn = getAllByTestId('orationes-AppearanceOptionOrganism-action');
-        btn.forEach((btnItem) => {
-          fireEvent.press(btnItem);
-          expect(mockHandleModalFontSize).toHaveBeenCalled();
         });
       });
     });
@@ -125,44 +112,6 @@ describe('Given <AppearanceTemplate/>', () => {
         const btn = getByTestId('orationes-HandleActionsThemeMolecule-dark');
         fireEvent.press(btn);
         expect(mockHandleModalTheme).toHaveBeenCalled();
-      });
-    });
-
-    describe('When the <HandleFontSizeMolecule/> is renderer', () => {
-      describe('When the increase touchable opacity receives an action', () => {
-        it('Then should trigger an action to increase the font', () => {
-          const { getByTestId } = setup();
-          const btn = getByTestId('orationes-HandleFontSizeMolecule-increase');
-          fireEvent.press(btn);
-          expect(mockHandleFontSize).toHaveBeenCalled();
-        });
-      });
-
-      describe('When the restore touchable opacity receives an action', () => {
-        it('Then should trigger an action to restore the font', () => {
-          const { getByTestId } = setup();
-          const btn = getByTestId('orationes-HandleFontSizeMolecule-restore');
-          fireEvent.press(btn);
-          expect(mockHandleFontSize).toHaveBeenCalled();
-        });
-      });
-
-      describe('When the decrease touchable opacity receives an action', () => {
-        it('Then should trigger an action to decrease the font', () => {
-          const { getByTestId } = setup();
-          const btn = getByTestId('orationes-HandleFontSizeMolecule-decrease');
-          fireEvent.press(btn);
-          expect(mockHandleFontSize).toHaveBeenCalled();
-        });
-      });
-    });
-
-    describe('When the onDefine receives an action', () => {
-      it('Then should trigger an action', () => {
-        const { getByTestId } = setup();
-        const btn = getByTestId('orationes-Button-TouchableOpacity');
-        fireEvent.press(btn);
-        expect(mockHandleModalFontSize).toHaveBeenCalled();
       });
     });
   });

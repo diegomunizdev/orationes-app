@@ -11,7 +11,7 @@ import TabContentNavigation from '../../organisms/Home/TabContentNavigation/TabC
 
 export default function HomeTemplate(): JSX.Element {
   const navigation = useNavigation();
-  const { handleDrawer, fontSize } = useLayoutContext();
+  const { handleDrawer } = useLayoutContext();
 
   const { data, loading, error, handleDailyLiturgy } = useHomeContext();
 
@@ -48,7 +48,7 @@ export default function HomeTemplate(): JSX.Element {
       ) : data ? (
         <View style={styles.content} testID="orationes-HomeTemplate-data">
           <DailyLiturgyHeader dailyLiturgy={data} />
-          <TabContentNavigation dailyLiturgy={data} fontSize={fontSize} />
+          <TabContentNavigation dailyLiturgy={data} />
         </View>
       ) : null}
     </ScrollView>

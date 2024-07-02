@@ -4,12 +4,10 @@ import PrimaryReadingContent from '../../../molecules/Home/PrimaryReadingContent
 
 export type PrimaryReadingProps = {
   primaryReading: PrimaryReadingProtocol | undefined;
-  fontSize: number;
 };
 
 export default function PrimaryReading({
   primaryReading,
-  fontSize,
 }: PrimaryReadingProps): JSX.Element {
   const styles = StyleSheet.create({
     container: { flex: 1 },
@@ -23,10 +21,7 @@ export default function PrimaryReading({
       showsVerticalScrollIndicator={false}
       testID="orationes-PrimaryReading-ScrollView"
     >
-      <PrimaryReadingContent
-        primaryReading={primaryReading}
-        fontSize={fontSize}
-      />
+      <PrimaryReadingContent primaryReading={primaryReading} />
     </ScrollView>
   );
 }

@@ -6,12 +6,10 @@ import TextLiturgy from '../../../shared/TextLiturgy/TextLiturgy';
 
 export type GospelContentProps = {
   gospel: GospelProtocol | undefined;
-  fontSize: number;
 };
 
 export default function GospelContent({
   gospel,
-  fontSize,
 }: GospelContentProps): JSX.Element {
   const { colors } = useTheme();
 
@@ -27,44 +25,26 @@ export default function GospelContent({
     <View style={styles.container} testID="orationes-GospelContent-View">
       <TextLiturgy
         style={styles.reference}
-        valueSize={fontSize}
         testID="orationes-GospelContent-reference"
       >
         {`Evangelho: ${gospel?.referencia}`}
       </TextLiturgy>
-      <TextLiturgy
-        style={styles.title}
-        valueSize={fontSize}
-        testID="orationes-GospelContent-title"
-      >
+      <TextLiturgy style={styles.title} testID="orationes-GospelContent-title">
         {gospel?.titulo}
       </TextLiturgy>
-      <TextLiturgy
-        style={styles.glory}
-        valueSize={fontSize}
-        testID="orationes-GospelContent-glory"
-      >
+      <TextLiturgy style={styles.glory} testID="orationes-GospelContent-glory">
         Glória a vós, Senhor.
       </TextLiturgy>
-      <TextLiturgy
-        style={styles.text}
-        valueSize={fontSize}
-        testID="orationes-GospelContent-text"
-      >
+      <TextLiturgy style={styles.text} testID="orationes-GospelContent-text">
         {gospel?.texto}
       </TextLiturgy>
       <TextLiturgy
         style={styles.text}
-        valueSize={fontSize}
         testID="orationes-GospelContent-wordSalvation"
       >
         Palavra da salvação.
       </TextLiturgy>
-      <TextLiturgy
-        style={styles.glory}
-        valueSize={fontSize}
-        testID="orationes-GospelContent-glory"
-      >
+      <TextLiturgy style={styles.glory} testID="orationes-GospelContent-glory">
         Glória a vós, Senhor.
       </TextLiturgy>
     </View>

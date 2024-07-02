@@ -4,10 +4,9 @@ import PsalmsContent from '../../../molecules/Home/PsalmsContent/PsalmsContent';
 
 export type PsalmsProps = {
   psalms: PsalmsProtocol | undefined;
-  fontSize: number;
 };
 
-export default function Psalms({ psalms, fontSize }: PsalmsProps): JSX.Element {
+export default function Psalms({ psalms }: PsalmsProps): JSX.Element {
   const styles = StyleSheet.create({
     container: { flex: 1 },
     content: { paddingHorizontal: 20, paddingBottom: 20 },
@@ -20,7 +19,7 @@ export default function Psalms({ psalms, fontSize }: PsalmsProps): JSX.Element {
       showsVerticalScrollIndicator={false}
       testID="orationes-Psalms-ScrollView"
     >
-      <PsalmsContent psalms={psalms} fontSize={fontSize} />
+      <PsalmsContent psalms={psalms} />
     </ScrollView>
   );
 }

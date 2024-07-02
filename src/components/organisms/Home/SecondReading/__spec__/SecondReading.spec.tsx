@@ -1,10 +1,8 @@
 import { render } from '@testing-library/react-native';
 import SecondReading, { SecondReadingProtocolProps } from '../SecondReading';
-import { FontSizeType } from '../../../../../infra/theme/theme';
 
 const mockProps: SecondReadingProtocolProps = {
   secondReading: undefined,
-  fontSize: FontSizeType.TEXT_24,
 };
 
 describe('Given <SecondReading/>', () => {

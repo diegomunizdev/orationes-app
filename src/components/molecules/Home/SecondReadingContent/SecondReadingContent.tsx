@@ -5,12 +5,10 @@ import TextLiturgy from '../../../shared/TextLiturgy/TextLiturgy';
 
 export type SecondReadingContentProps = {
   secondReading: SecondReadingProtocol | undefined;
-  fontSize: number;
 };
 
 export default function SecondReadingContent({
   secondReading,
-  fontSize,
 }: SecondReadingContentProps): JSX.Element {
   const { colors } = useTheme();
 
@@ -22,21 +20,13 @@ export default function SecondReadingContent({
 
   return (
     <View style={styles.container} testID="orationes-SecondReadingContent-View">
-      <TextLiturgy style={styles.text} valueSize={fontSize}>
+      <TextLiturgy style={styles.text}>
         {`Primeira leitura: ${secondReading?.referencia}`}
       </TextLiturgy>
-      <TextLiturgy style={styles.bold} valueSize={fontSize}>
-        {secondReading?.titulo}
-      </TextLiturgy>
-      <TextLiturgy style={styles.text} valueSize={fontSize}>
-        {secondReading?.texto}
-      </TextLiturgy>
-      <TextLiturgy style={styles.text} valueSize={fontSize}>
-        Palavra do Senhor.
-      </TextLiturgy>
-      <TextLiturgy style={styles.bold} valueSize={fontSize}>
-        Graças a Deus
-      </TextLiturgy>
+      <TextLiturgy style={styles.bold}>{secondReading?.titulo}</TextLiturgy>
+      <TextLiturgy style={styles.text}>{secondReading?.texto}</TextLiturgy>
+      <TextLiturgy style={styles.text}>Palavra do Senhor.</TextLiturgy>
+      <TextLiturgy style={styles.bold}>Graças a Deus</TextLiturgy>
     </View>
   );
 }
