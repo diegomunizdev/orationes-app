@@ -1,11 +1,9 @@
 import { render } from '@testing-library/react-native';
 
 import Gospel, { GospelProps } from '../Gospel';
-import { FontSizeType } from '../../../../../infra/theme/theme';
 
 const mockProps: GospelProps = {
   gospel: undefined,
-  fontSize: FontSizeType.TEXT_24,
 };
 
 describe('Given <Gospel/>', () => {

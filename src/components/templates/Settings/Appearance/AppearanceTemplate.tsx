@@ -5,18 +5,12 @@ import { useLayoutContext } from '../../../../application/contexts/layout/layout
 import Header from '../../../shared/Header/Header';
 import AppearanceOptionOrganism from '../../../organisms/Settings/Appearance/AppearanceOption/AppearanceOptionOrganism';
 import ModalThemeTemplate from './ModalTheme/ModalThemeTemplate';
-import ModalFontSizeTemplate from './ModalTheme/ModalFontSizeTemplate';
 import { useAppearanceContext } from '../../../../application/contexts/settings/appearance/appearance.context';
 
 export default function AppearanceTemplate(): JSX.Element {
   const navigation = useNavigation();
-  const {
-    modalVisibleTheme,
-    handleModalTheme,
-    modalVisibleFontSize,
-    handleModalFontSize,
-  } = useAppearanceContext();
-  const { handleTheme, handleFontSize } = useLayoutContext();
+  const { modalVisibleTheme, handleModalTheme } = useAppearanceContext();
+  const { handleTheme } = useLayoutContext();
 
   const styles = StyleSheet.create({
     container: { flex: 1 },
@@ -29,12 +23,6 @@ export default function AppearanceTemplate(): JSX.Element {
       title: 'Tema',
       subtitle: 'Escolha entre claro e escuro.',
       action: () => handleModalTheme(),
-    },
-    {
-      icon: 'format-size',
-      title: 'Tamanho da fonte',
-      subtitle: 'Escolha o tamanho da fonte dos textos.',
-      action: () => handleModalFontSize(),
     },
   ];
 
@@ -50,14 +38,6 @@ export default function AppearanceTemplate(): JSX.Element {
           handleModalTheme();
         }}
         handleTheme={handleTheme}
-      />
-
-      <ModalFontSizeTemplate
-        visible={modalVisibleFontSize}
-        onClose={() => {
-          handleModalFontSize();
-        }}
-        handleFontSize={handleFontSize}
       />
 
       <Header title="Aparência" goBack={() => navigation?.goBack()} />

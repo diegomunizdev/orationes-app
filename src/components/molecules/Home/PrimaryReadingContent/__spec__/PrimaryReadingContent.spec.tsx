@@ -3,11 +3,9 @@ import { render } from '@testing-library/react-native';
 import PrimaryReadingContent, {
   PrimaryReadingContentProps,
 } from '../PrimaryReadingContent';
-import { FontSizeType } from '../../../../../infra/theme/theme';
 
 const mockProps: PrimaryReadingContentProps = {
   primaryReading: undefined,
-  fontSize: FontSizeType.TEXT_24,
 };
 
 describe('Given <PrimaryReading/>', () => {

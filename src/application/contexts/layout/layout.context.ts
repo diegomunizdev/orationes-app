@@ -6,9 +6,6 @@ export type LayoutContextProps = {
   handleTheme: (theme: string) => void;
   drawer: RefObject<DrawerLayoutAndroid>;
   handleDrawer: () => void;
-
-  fontSize: number;
-  handleFontSize: (scale: 'mais' | 'menos' | undefined) => void;
 };
 
 export const LayoutContext = createContext<LayoutContextProps>(
