@@ -6,12 +6,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import {
-  DrawerLayoutAndroid,
-  useWindowDimensions,
-  Platform,
-  PixelRatio,
-} from 'react-native';
+import { DrawerLayoutAndroid } from 'react-native';
 
 import { LayoutContext } from '../../../application/contexts/layout/layout.context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -29,11 +24,6 @@ export default function LayoutProvider({
     },
     [setTheme]
   );
-
-  const test = useWindowDimensions().fontScale;
-  const p = Platform.OS;
-  const a = PixelRatio.get();
-  console.log({ test, p, a });
 
   const handleDrawer = useCallback(() => {
     drawer.current?.openDrawer();
