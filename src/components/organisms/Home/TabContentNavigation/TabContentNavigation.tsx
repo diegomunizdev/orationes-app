@@ -1,10 +1,13 @@
+import { lazy } from 'react';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import { DailyLiturgyProtocol } from '../../../../domain/protocols/DialyLiturgy';
-import PrimaryReading from '../PrimaryReading/PrimaryReading';
-import Psalms from '../Psalms/Psalms';
-import SecondReading from '../SecondReading/SecondReading';
-import Gospel from '../Gospel/Gospel';
+
+const PrimaryReading = lazy(() => import('../PrimaryReading/PrimaryReading'));
+const Psalms = lazy(() => import('../Psalms/Psalms'));
+const SecondReading = lazy(() => import('../SecondReading/SecondReading'));
+const Gospel = lazy(() => import('../Gospel/Gospel'));
 
 const Tab = createBottomTabNavigator();
 
