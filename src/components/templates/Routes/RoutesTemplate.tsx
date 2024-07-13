@@ -1,9 +1,9 @@
 import React from 'react';
 import { DrawerLayoutAndroid, StatusBar } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 
 import { useLayoutContext } from '../../../application/contexts/layout/layout.context';
-import { useNavigation } from '@react-navigation/native';
 import { darkTheme, lightTheme } from '../../../infra/theme/theme';
 import DrawerNavigationOrganism from '../../organisms/DrawerNavigation/DrawerNavigationOrganism';
 import SettingsView from '../../views/Settings/SettingsView';
