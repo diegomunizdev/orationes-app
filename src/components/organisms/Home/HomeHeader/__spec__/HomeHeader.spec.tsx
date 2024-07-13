@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react-native';
-
 import HomeHeader, { HomeHeaderProps } from '../HomeHeader';
 
 jest.mock('react-i18next', () => ({

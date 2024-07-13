@@ -5,12 +5,10 @@ import TextLiturgy from '../../../shared/TextLiturgy/TextLiturgy';
 
 export type PsalmsContentProps = {
   psalms: PsalmsProtocol | undefined;
-  fontSize: number;
 };
 
 export default function PsalmsContent({
   psalms,
-  fontSize,
 }: PsalmsContentProps): JSX.Element {
   const { colors } = useTheme();
 
@@ -22,15 +20,11 @@ export default function PsalmsContent({
 
   return (
     <View style={styles.container} testID="orationes-PsalmsContent-View">
-      <TextLiturgy style={styles.text} valueSize={fontSize}>
+      <TextLiturgy style={styles.text}>
         {`Salmo: ${psalms?.referencia}`}
       </TextLiturgy>
-      <TextLiturgy style={styles.chorus} valueSize={fontSize}>
-        {psalms?.refrao}
-      </TextLiturgy>
-      <TextLiturgy style={styles.text} valueSize={fontSize}>
-        {psalms?.texto}
-      </TextLiturgy>
+      <TextLiturgy style={styles.chorus}>{psalms?.refrao}</TextLiturgy>
+      <TextLiturgy style={styles.text}>{psalms?.texto}</TextLiturgy>
     </View>
   );
 }

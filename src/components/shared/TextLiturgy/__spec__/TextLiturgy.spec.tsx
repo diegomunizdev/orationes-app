@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react-native';
 
-import TextLiturgy, { TextLiturgyProps } from '../TextLiturgy';
+import TextLiturgy from '../TextLiturgy';
 
 jest.mock('@expo/vector-icons', () => {
   const { View } = require('react-native');
@@ -9,16 +9,12 @@ jest.mock('@expo/vector-icons', () => {
   };
 });
 
-const mockProps: TextLiturgyProps = {
-  valueSize: 20,
-};
-
 describe('Given <TextLiturgy/>', () => {
-  const setup = (props: TextLiturgyProps) => render(<TextLiturgy {...props} />);
+  const setup = () => render(<TextLiturgy />);
 
   describe('When the component is renderer', () => {
     it('Then a View should appear', () => {
-      const { getByTestId } = setup(mockProps);
+      const { getByTestId } = setup();
       getByTestId('orationes-TextLiturgy-Text');
     });
   });

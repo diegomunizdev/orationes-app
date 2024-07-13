@@ -17,7 +17,7 @@ export default function SettingsTemplate(): JSX.Element {
     {
       icon: 'invert-colors',
       title: 'Aparência',
-      subtitle: 'Altere o tema e o tamanho da fonte.',
+      subtitle: 'Altere o tema.',
       action: () => navigation?.navigate('Appearance' as never),
     },
     {

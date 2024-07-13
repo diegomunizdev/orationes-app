@@ -1,10 +1,8 @@
 import { render } from '@testing-library/react-native';
 import PsalmsContent, { PsalmsContentProps } from '../PsalmsContent';
-import { FontSizeType } from '../../../../../infra/theme/theme';
 
 const mockProps: PsalmsContentProps = {
   psalms: undefined,
-  fontSize: FontSizeType.TEXT_24,
 };
 
 describe('Given <Gospel/>', () => {

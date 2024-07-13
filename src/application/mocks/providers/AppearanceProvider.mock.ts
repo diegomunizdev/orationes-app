@@ -3,6 +3,4 @@ import { AppearanceContextProps } from '../../contexts/settings/appearance/appea
 export const mockAppearanceContext: AppearanceContextProps = {
   modalVisibleTheme: true,
   handleModalTheme: jest.fn(),
-  modalVisibleFontSize: true,
-  handleModalFontSize: jest.fn(),
 };
