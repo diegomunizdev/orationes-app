@@ -4,7 +4,8 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
+    "android": "expo run:android",
+    "android:local": "expo run:android",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
     "typecheck": "tsc --noEmit",
