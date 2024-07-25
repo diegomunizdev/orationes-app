@@ -2,10 +2,10 @@ import { ScrollView, StyleSheet } from 'react-native';
 
 import Header from '../../shared/Header/Header';
 import SettingsOptionOrganism from '../../organisms/Settings/SettingsOption/SettingsOptionOrganism';
-import { useNavigation } from '../../../application/contexts/navigation/navigation.context';
+import { useNavigationContext } from '../../../application/contexts/navigation/navigation.context';
 
 export default function SettingsTemplate(): JSX.Element {
-  const navigation = useNavigation();
+  const navigation = useNavigationContext();
 
   const styles = StyleSheet.create({
     container: {

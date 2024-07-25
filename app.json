@@ -2,14 +2,14 @@
   "expo": {
     "name": "Orationes",
     "slug": "orationes-app",
-    "version": "1.0.0-alpha",
+    "version": "1.0.1-alpha",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#2E476B"
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
     },
     "assetBundlePatterns": ["**/*"],
     "android": {

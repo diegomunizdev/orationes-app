@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { useNavigation } from '../../../../application/contexts/navigation/navigation.context';
+import { useNavigationContext } from '../../../../application/contexts/navigation/navigation.context';
 import PACKAGE_JSON from '../../../../../package.json';
 import { useTheme } from '@react-navigation/native';
 import Header from '../../../shared/Header/Header';
 
 export default function InformationAppView(): JSX.Element {
-  const navigation = useNavigation();
+  const navigation = useNavigationContext();
   const { colors } = useTheme();
 
   const styles = StyleSheet.create({

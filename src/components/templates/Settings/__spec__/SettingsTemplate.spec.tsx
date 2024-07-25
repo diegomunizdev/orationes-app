@@ -13,7 +13,7 @@ jest.mock(
     );
     return {
       ...actualNav,
-      useNavigation: () => ({
+      useNavigationContext: () => ({
         navigate: mockedNavigate,
         goBack: mockGoBack,
       }),

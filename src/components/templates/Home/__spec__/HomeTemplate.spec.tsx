@@ -1,5 +1,3 @@
-// include this line for mocking react-native-gesture-handler
-import 'react-native-gesture-handler/jestSetup';
 import { act, fireEvent, render, waitFor } from '@testing-library/react-native';
 
 import HomeTemplate from '../HomeTemplate';
@@ -24,17 +22,14 @@ const mockedNavigate = jest.fn();
 
 jest.mock(
   '../../../../application/contexts/navigation/navigation.context',
-  () => {
-    const actualNav = jest.requireActual(
+  () => ({
+    ...jest.requireActual(
       '../../../../application/contexts/navigation/navigation.context'
-    );
-    return {
-      ...actualNav,
-      useNavigation: () => ({
-        navigate: mockedNavigate,
-      }),
-    };
-  }
+    ),
+    useNavigationContext: () => ({
+      navigate: mockedNavigate,
+    }),
+  })
 );
 
 describe('Given <HomeTemplate/>', () => {
@@ -55,7 +50,7 @@ describe('Given <HomeTemplate/>', () => {
   describe('When the component is rendered', () => {
     it('Then a view should appear', async () => {
       const { getByTestId } = setup(mockHomeProvider, mockLayoutProvider);
-      getByTestId('orationes-HomeTemplate-View');
+      getByTestId('orationes-ViewBase-View');
     });
   });
 

@@ -1,4 +1,4 @@
-import { NavigationContext } from '@react-navigation/native';
 import { useContext } from 'react';
+import { NavigationContext } from '@react-navigation/native';
 
-export const useNavigation = () => useContext(NavigationContext);
+export const useNavigationContext = () => useContext(NavigationContext);

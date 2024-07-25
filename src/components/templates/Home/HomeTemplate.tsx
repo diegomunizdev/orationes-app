@@ -1,37 +1,22 @@
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { useNavigation } from '../../../application/contexts/navigation/navigation.context';
 import { useHomeContext } from '../../../application/contexts/home/home.context';
-import { useLayoutContext } from '../../../application/contexts/layout/layout.context';
-import HomeHeader from '../../organisms/Home/HomeHeader/HomeHeader';
 import Loading from '../../shared/Loading/Loading';
 import Error from '../../shared/Error/Error';
 import DailyLiturgyHeader from '../../organisms/Home/DailyLiturgyHeader/DailyLiturgyHeader';
 import TabContentNavigation from '../../organisms/Home/TabContentNavigation/TabContentNavigation';
+import ViewBase from '../../shared/ViewBase/ViewBase';
 
 export default function HomeTemplate(): JSX.Element {
-  const navigation = useNavigation();
-  const { handleDrawer } = useLayoutContext();
-
   const { data, loading, error, handleDailyLiturgy } = useHomeContext();
 
   const styles = StyleSheet.create({
-    container: { flex: 1 },
     content: { flex: 1 },
     loadingOrError: { marginTop: 20 },
   });
 
   return (
-    <ScrollView
-      style={styles.container}
-      contentContainerStyle={styles.content}
-      testID="orationes-HomeTemplate-View"
-    >
-      <HomeHeader
-        drawerNavigation={() => handleDrawer()}
-        navigateToSettings={() => navigation?.navigate('Settings')}
-      />
-
+    <ViewBase>
       {loading ? (
         <View style={styles.loadingOrError}>
           <Loading title="Buscando leituras..." />
@@ -51,6 +36,6 @@ export default function HomeTemplate(): JSX.Element {
           <TabContentNavigation dailyLiturgy={data} />
         </View>
       ) : null}
-    </ScrollView>
+    </ViewBase>
   );
 }

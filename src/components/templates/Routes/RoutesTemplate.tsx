@@ -10,6 +10,7 @@ import SettingsView from '../../views/Settings/SettingsView';
 import AppearanceView from '../../views/Settings/Appearance/AppearanceView';
 import InformationAppView from '../../views/Settings/InformationApp/InformationApp';
 import HomeView from '../../views/Home/HomeView';
+import PrayersView from '../../views/Prayers/PrayersView';
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +41,7 @@ export default function RoutesTemplate() {
         <Stack.Screen name="Settings" component={SettingsView} />
         <Stack.Screen name="Appearance" component={AppearanceView} />
         <Stack.Screen name="InformationApp" component={InformationAppView} />
+        <Stack.Screen name="Prayers" component={PrayersView} />
       </Stack.Navigator>
     </DrawerLayoutAndroid>
   );

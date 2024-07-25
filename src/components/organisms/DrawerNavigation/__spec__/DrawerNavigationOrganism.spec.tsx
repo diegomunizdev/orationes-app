@@ -52,8 +52,10 @@ describe('Given <DrawerNavigationOrganism/>', () => {
         const touchableOpacity = getAllByTestId(
           'orationes-DrawerNavigationOrganism-TouchableOpacity'
         );
-        fireEvent.press(touchableOpacity[0]);
-        expect(mockNavigate).toHaveBeenCalled();
+        touchableOpacity.forEach((btn) => {
+          fireEvent.press(btn);
+          expect(mockNavigate).toHaveBeenCalled();
+        });
       });
 
       it('Then you should trigger a function from close drawer', () => {
@@ -61,8 +63,10 @@ describe('Given <DrawerNavigationOrganism/>', () => {
         const touchableOpacity = getAllByTestId(
           'orationes-DrawerNavigationOrganism-TouchableOpacity'
         );
-        fireEvent.press(touchableOpacity[0]);
-        expect(mockCloseDrawer).toHaveBeenCalled();
+        touchableOpacity.forEach((btn) => {
+          fireEvent.press(btn);
+          expect(mockCloseDrawer).toHaveBeenCalled();
+        });
       });
     });
   });

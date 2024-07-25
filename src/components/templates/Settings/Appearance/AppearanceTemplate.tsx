@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, View } from 'react-native';
 
-import { useNavigation } from '../../../../application/contexts/navigation/navigation.context';
+import { useNavigationContext } from '../../../../application/contexts/navigation/navigation.context';
 import { useLayoutContext } from '../../../../application/contexts/layout/layout.context';
 import Header from '../../../shared/Header/Header';
 import AppearanceOptionOrganism from '../../../organisms/Settings/Appearance/AppearanceOption/AppearanceOptionOrganism';
@@ -8,7 +8,7 @@ import ModalThemeTemplate from './ModalTheme/ModalThemeTemplate';
 import { useAppearanceContext } from '../../../../application/contexts/settings/appearance/appearance.context';
 
 export default function AppearanceTemplate(): JSX.Element {
-  const navigation = useNavigation();
+  const navigation = useNavigationContext();
   const { modalVisibleTheme, handleModalTheme } = useAppearanceContext();
   const { handleTheme } = useLayoutContext();
 

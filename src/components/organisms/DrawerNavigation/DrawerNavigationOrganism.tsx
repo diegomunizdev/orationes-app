@@ -49,6 +49,14 @@ export default function DrawerNavigationOrganism({
         drawer.current?.closeDrawer();
       },
     },
+    {
+      icon: 'hands-pray',
+      title: 'Orações',
+      action: () => {
+        navigation?.navigate('Prayers');
+        drawer.current?.closeDrawer();
+      },
+    },
   ];
 
   return (
