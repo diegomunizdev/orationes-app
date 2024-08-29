@@ -1,7 +1,11 @@
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
+
 import LoadingFallback from '../../shared/Loading/LoadingFallback';
 import SettingsProvider from '../../providers/Settings/Settings.provider';
-import SettingsTemplate from '../../templates/Settings/SettingsTemplate';
+
+const SettingsTemplate = lazy(
+  () => import('../../templates/Settings/SettingsTemplate')
+);
 
 export default function SettingsView(): JSX.Element {
   return (

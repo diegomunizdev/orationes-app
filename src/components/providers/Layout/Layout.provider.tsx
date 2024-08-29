@@ -1,15 +1,15 @@
 import {
   PropsWithChildren,
   useCallback,
-  useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
 } from 'react';
 import { DrawerLayoutAndroid } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { LayoutContext } from '../../../application/contexts/layout/layout.context';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LayoutProvider({
   children,
@@ -29,7 +29,7 @@ export default function LayoutProvider({
     drawer.current?.openDrawer();
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     (async () => {
       try {
         const theme = await AsyncStorage.getItem('theme');

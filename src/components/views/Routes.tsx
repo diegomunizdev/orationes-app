@@ -1,11 +1,11 @@
 import React from 'react';
+import { ScrollView, StyleSheet } from 'react-native';
+import { StatusBar as StatusBarExpo } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
+import { useFeatureFlag } from 'configcat-react';
 
 import { darkTheme, lightTheme } from '../../infra/theme/theme';
 import { useLayoutContext } from '../../application/contexts/layout/layout.context';
-import { StatusBar as StatusBarExpo } from 'expo-status-bar';
-import { ScrollView, StyleSheet } from 'react-native';
-import { useFeatureFlag } from 'configcat-react';
 import MaintenanceTemplate from '../templates/Maintenance/MaintenanceTemplate';
 import RoutesTemplate from '../templates/Routes/RoutesTemplate';
 
