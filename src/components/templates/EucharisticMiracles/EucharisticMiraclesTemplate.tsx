@@ -4,7 +4,7 @@ import { useTheme } from '@react-navigation/native';
 import ViewBase from '../../shared/ViewBase/ViewBase';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function PrayersTemplate(): JSX.Element {
+export default function EucharisticMiraclesTemplate(): JSX.Element {
   const { colors } = useTheme();
   const styles = StyleSheet.create({
     container: { marginHorizontal: 8, flex: 1 },
@@ -22,30 +22,25 @@ export default function PrayersTemplate(): JSX.Element {
 
   const prayersList = [
     {
-      title: 'Alma de Cristo',
-      description: 'Santificai-me.',
+      title: 'Lanciano',
+      description: 'Itália, ano 700.',
       action: () => {},
     },
     {
-      title: 'Santo Rosário',
-      description: 'Mistérios da vida de Cristo.',
+      title: 'Orvieto ou Bolsena',
+      description: 'Itália, ano 1263',
       action: () => {},
     },
     {
-      title: 'Jesus Sacramentado',
-      description:
-        'Estais tão presente, poderoso e glorioso como estais no céu.',
-      action: () => {},
-    },
-    {
-      title: 'São Bento',
-      description: 'A Cruz Sagrada seja minha luz.',
+      title: 'Buenos Aires',
+      description: 'Argentina, ano 1996',
       action: () => {},
     },
   ];
 
   return (
     <ViewBase>
+      <Text style={{ color: colors.text }}>Milagres Eucarísticos</Text>
       {prayersList.map((pray, index) => (
         <TouchableOpacity
           onPress={() => {}}

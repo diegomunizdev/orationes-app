@@ -1,6 +1,6 @@
 import { axiosInstance } from './axios';
 
-export const apiService = async (): Promise<any> => {
+export async function apiService(): Promise<any> {
   const result = await axiosInstance.get('');
   return result.data;
-};
+}

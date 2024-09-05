@@ -11,6 +11,7 @@ import AppearanceView from '../../views/Settings/Appearance/AppearanceView';
 import InformationAppView from '../../views/Settings/InformationApp/InformationApp';
 import HomeView from '../../views/Home/HomeView';
 import PrayersView from '../../views/Prayers/PrayersView';
+import EucharisticMiraclesView from '../../views/EucharisticMiracles/EucharisticMiraclesView';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +43,10 @@ export default function RoutesTemplate() {
         <Stack.Screen name="Appearance" component={AppearanceView} />
         <Stack.Screen name="InformationApp" component={InformationAppView} />
         <Stack.Screen name="Prayers" component={PrayersView} />
+        <Stack.Screen
+          name="EucharisticMiracles"
+          component={EucharisticMiraclesView}
+        />
       </Stack.Navigator>
     </DrawerLayoutAndroid>
   );

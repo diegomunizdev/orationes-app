@@ -4,8 +4,8 @@ import { useHomeContext } from '../../../application/contexts/home/home.context'
 import Loading from '../../shared/Loading/Loading';
 import Error from '../../shared/Error/Error';
 import DailyLiturgyHeader from '../../organisms/Home/DailyLiturgyHeader/DailyLiturgyHeader';
-import TabContentNavigation from '../../organisms/Home/TabContentNavigation/TabContentNavigation';
 import ViewBase from '../../shared/ViewBase/ViewBase';
+import TabContentNavigation from '../../organisms/Home/TabContentNavigation/TabContentNavigation';
 
 export default function HomeTemplate(): JSX.Element {
   const { data, loading, error, handleDailyLiturgy } = useHomeContext();

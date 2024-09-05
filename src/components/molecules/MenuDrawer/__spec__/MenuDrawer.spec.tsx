@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react-native';
 
-import MenuDrawer, { MenuDrawerProps } from '../MenuDrawer';
+import MenuDrawer, { MenuDrawerProps } from '../MenuDrawerMolecule';
 
 jest.mock('@expo/vector-icons', () => {
   const { View } = require('react-native');
