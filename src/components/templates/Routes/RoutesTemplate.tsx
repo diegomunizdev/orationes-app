@@ -12,6 +12,11 @@ import InformationAppView from '../../views/Settings/InformationApp/InformationA
 import HomeView from '../../views/Home/HomeView';
 import PrayersView from '../../views/Prayers/PrayersView';
 import EucharisticMiraclesView from '../../views/EucharisticMiracles/EucharisticMiraclesView';
+import AlmaDeCristoView from '../../views/Prayers/AlmaDeCristo/AlmaDeCristoView';
+import SantoRosarioView from '../../views/Prayers/SantoRosario/SantoRosarioView';
+import JesusSacramentadoView from '../../views/Prayers/JesusSacramentado/JesusSacramentado';
+import SaoBentoView from '../../views/Prayers/SaoBento/SaoBentoView';
+import SaoMiguelView from '../../views/Prayers/SaoMiguel/SaoMiguelView';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +48,20 @@ export default function RoutesTemplate() {
         <Stack.Screen name="Appearance" component={AppearanceView} />
         <Stack.Screen name="InformationApp" component={InformationAppView} />
         <Stack.Screen name="Prayers" component={PrayersView} />
+        <Stack.Screen
+          name="Prayers.AlmaDeCristo"
+          component={AlmaDeCristoView}
+        />
+        <Stack.Screen
+          name="Prayers.SantoRosario"
+          component={SantoRosarioView}
+        />
+        <Stack.Screen
+          name="Prayers.JesusSacramentado"
+          component={JesusSacramentadoView}
+        />
+        <Stack.Screen name="Prayers.SaoBento" component={SaoBentoView} />
+        <Stack.Screen name="Prayers.SaoMiguel" component={SaoMiguelView} />
         <Stack.Screen
           name="EucharisticMiracles"
           component={EucharisticMiraclesView}

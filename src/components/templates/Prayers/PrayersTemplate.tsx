@@ -1,77 +1,39 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 import ViewBase from '../../shared/ViewBase/ViewBase';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import PrayerOptionOrganism from '../../organisms/Prayers/PrayerOption/PrayerOptionOrganism';
 
 export default function PrayersTemplate(): JSX.Element {
-  const { colors } = useTheme();
-  const styles = StyleSheet.create({
-    container: { marginHorizontal: 8, flex: 1 },
-    content: {
-      padding: 20,
-      borderBottomWidth: 1,
-      borderBottomColor: colors.border,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-    },
-    title: { color: colors.text, fontWeight: 'bold' },
-    subtitle: { color: '#8F8F8F' },
-  });
+  const { navigate } = useNavigation();
 
   const prayersList = [
     {
       title: 'Alma de Cristo',
       description: 'Santificai-me.',
-      action: () => {},
-    },
-    {
-      title: 'Santo Rosário',
-      description: 'Mistérios da vida de Cristo.',
-      action: () => {},
+      action: () => navigate('Prayers.AlmaDeCristo' as never),
     },
     {
       title: 'Jesus Sacramentado',
       description:
         'Estais tão presente, poderoso e glorioso como estais no céu.',
-      action: () => {},
+      action: () => navigate('Prayers.JesusSacramentado' as never),
     },
     {
       title: 'São Bento',
       description: 'A Cruz Sagrada seja minha luz.',
-      action: () => {},
+      action: () => navigate('Prayers.SaoBento' as never),
+    },
+    {
+      title: 'São Miguel Arcanjo',
+      description: 'Defendei-nos no combate.',
+      action: () => navigate('Prayers.SaoMiguel' as never),
     },
   ];
 
   return (
     <ViewBase>
       {prayersList.map((pray, index) => (
-        <TouchableOpacity
-          onPress={() => {}}
-          testID="orationes-SettingsOption-TouchableOpacity"
-          key={index}
-        >
-          <View style={styles.content} testID="orationes-SettingsOption-View">
-            <View style={styles.container} testID="orationes-SettingsItem-View">
-              <Text style={styles.title} testID="orationes-SettingsItem-title">
-                {pray.title}
-              </Text>
-              <Text
-                style={styles.subtitle}
-                testID="orationes-SettingsItem-subtitle"
-              >
-                {pray.description}
-              </Text>
-            </View>
-            <MaterialCommunityIcons
-              name="chevron-right"
-              color={colors.text}
-              size={22}
-              testID="orationes-SettingsOption-chevron-right"
-            />
-          </View>
-        </TouchableOpacity>
+        <PrayerOptionOrganism {...pray} key={index} />
       ))}
     </ViewBase>
   );
