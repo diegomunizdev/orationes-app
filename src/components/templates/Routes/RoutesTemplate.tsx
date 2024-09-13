@@ -1,7 +1,6 @@
 import React from 'react';
 import { DrawerLayoutAndroid, StatusBar } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useNavigation } from '@react-navigation/native';
 
 import { useLayoutContext } from '../../../application/contexts/layout/layout.context';
 import { darkTheme, lightTheme } from '../../../infra/theme/theme';
@@ -14,15 +13,16 @@ import PrayersView from '../../views/Prayers/PrayersView';
 import EucharisticMiraclesView from '../../views/EucharisticMiracles/EucharisticMiraclesView';
 import AlmaDeCristoView from '../../views/Prayers/AlmaDeCristo/AlmaDeCristoView';
 import SantoRosarioView from '../../views/Prayers/SantoRosario/SantoRosarioView';
-import JesusSacramentadoView from '../../views/Prayers/JesusSacramentado/JesusSacramentado';
+import JesusSacramentadoView from '../../views/Prayers/JesusSacramentado/JesusSacramentadoView';
 import SaoBentoView from '../../views/Prayers/SaoBento/SaoBentoView';
 import SaoMiguelView from '../../views/Prayers/SaoMiguel/SaoMiguelView';
+import { useNavigationContext } from '../../../application/contexts/navigation/navigation.context';
 
 const Stack = createNativeStackNavigator();
 
 export default function RoutesTemplate() {
   const { drawer, theme } = useLayoutContext();
-  const navigation = useNavigation();
+  const navigation = useNavigationContext();
 
   return (
     <DrawerLayoutAndroid

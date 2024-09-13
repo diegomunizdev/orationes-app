@@ -1,11 +1,15 @@
-import { PropsWithChildren, useMemo } from 'react';
+import { PropsWithChildren } from 'react';
 
-import { SettingsContext } from '../../../application/contexts/settings/settings.context';
+import {
+  SettingsContext,
+  SettingsContextProps,
+} from '../../../application/contexts/settings/settings.context';
+import { useSettingsProvider } from './useSettingsProvider';
 
 export default function SettingsProvider({
   children,
 }: PropsWithChildren): JSX.Element {
-  const value = useMemo(() => ({}), []);
+  const value: SettingsContextProps = useSettingsProvider();
 
   return (
     <SettingsContext.Provider value={value}>

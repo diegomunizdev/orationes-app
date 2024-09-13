@@ -1,10 +1,10 @@
 import { StyleSheet, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 
 import Header from '../../../shared/Header/Header';
+import { useNavigationContext } from '../../../../application/contexts/navigation/navigation.context';
 
 export default function SantoRosarioView(): JSX.Element {
-  const { goBack } = useNavigation();
+  const navigation = useNavigationContext();
 
   const styles = StyleSheet.create({
     container: {
@@ -14,7 +14,7 @@ export default function SantoRosarioView(): JSX.Element {
 
   return (
     <View style={styles.container}>
-      <Header title="Santo Rosário" goBack={() => goBack()} />
+      <Header title="Santo Rosário" goBack={() => navigation?.goBack()} />
     </View>
   );
 }

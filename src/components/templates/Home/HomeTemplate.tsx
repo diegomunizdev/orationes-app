@@ -8,7 +8,7 @@ import ViewBase from '../../shared/ViewBase/ViewBase';
 import TabContentNavigation from '../../organisms/Home/TabContentNavigation/TabContentNavigation';
 
 export default function HomeTemplate(): JSX.Element {
-  const { data, loading, error, handleDailyLiturgy } = useHomeContext();
+  const { data, loading, error, buildDailyLiturgy } = useHomeContext();
 
   const styles = StyleSheet.create({
     content: { flex: 1 },
@@ -27,7 +27,7 @@ export default function HomeTemplate(): JSX.Element {
             title="Erro ao obter leituras"
             subtitle="Não foi possível obter as leituras do dia. Por favor, tente novamente"
             actionTitle="Obter leituras"
-            action={async () => await handleDailyLiturgy()}
+            action={async () => await buildDailyLiturgy()}
           />
         </View>
       ) : data ? (

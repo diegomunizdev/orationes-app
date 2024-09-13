@@ -34,15 +34,15 @@ export default function PrayerOptionOrganism({
   return (
     <TouchableOpacity
       onPress={() => action()}
-      testID="orationes-SettingsOption-TouchableOpacity"
+      testID="orationes-PrayerOptionOrganism-TouchableOpacity"
     >
-      <View style={styles.content} testID="orationes-SettingsOption-View">
+      <View style={styles.content} testID="orationes-PrayerOptionOrganism-View">
         <PrayerOptionMolecule title={title} description={description} />
         <MaterialCommunityIcons
           name="chevron-right"
           color={colors.text}
           size={22}
-          testID="orationes-SettingsOption-chevron-right"
+          testID="orationes-PrayerOptionOrganism-chevron-right"
         />
       </View>
     </TouchableOpacity>

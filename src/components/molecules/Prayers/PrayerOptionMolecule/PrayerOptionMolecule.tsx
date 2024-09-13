@@ -13,17 +13,20 @@ export default function PrayerOptionMolecule({
   const { colors } = useTheme();
 
   const styles = StyleSheet.create({
-    container: { marginHorizontal: 8, flex: 1 },
+    container: { flex: 1 },
     title: { color: colors.text, fontWeight: 'bold' },
     subtitle: { color: '#8F8F8F' },
   });
 
   return (
-    <View style={styles.container} testID="orationes-SettingsItem-View">
-      <Text style={styles.title} testID="orationes-SettingsItem-title">
+    <View style={styles.container} testID="orationes-PrayerOptionMolecule-View">
+      <Text style={styles.title} testID="orationes-PrayerOptionMolecule-title">
         {title}
       </Text>
-      <Text style={styles.subtitle} testID="orationes-SettingsItem-subtitle">
+      <Text
+        style={styles.subtitle}
+        testID="orationes-PrayerOptionMolecule-description"
+      >
         {description}
       </Text>
     </View>

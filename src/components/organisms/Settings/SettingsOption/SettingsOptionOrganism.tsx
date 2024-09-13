@@ -37,14 +37,14 @@ export default function SettingsOptionOrganism({
         <MaterialCommunityIcons
           name={icon as never}
           color={colors.text}
-          size={22}
+          size={24}
           testID="orationes-SettingsOption-icon"
         />
         <SettingsItem title={title} subtitle={subtitle} />
         <MaterialCommunityIcons
           name="chevron-right"
           color={colors.text}
-          size={22}
+          size={24}
           testID="orationes-SettingsOption-chevron-right"
         />
       </View>

@@ -31,7 +31,7 @@ jest.mock(
   }
 );
 
-describe('Given <HomeTemplate/>', () => {
+describe('Given <PrayersTemplate/>', () => {
   const setup = (mockLayoutProvider: LayoutContextProps) =>
     render(
       <LayoutContext.Provider value={mockLayoutProvider}>
@@ -48,11 +48,11 @@ describe('Given <HomeTemplate/>', () => {
     });
   });
 
-  describe('When the <HomeHeader/> component is rendered', () => {
+  describe('When the <PrayerOptionOrganism/> component is rendered', () => {
     it('Then a view should appear', async () => {
-      const { getByTestId } = setup(mockLayoutProvider);
+      const { getAllByTestId } = setup(mockLayoutProvider);
       waitFor(() => {
-        getByTestId('orationes-HomeHeader-View');
+        getAllByTestId('orationes-PrayerOptionOrganism-TouchableOpacity');
       });
     });
 
@@ -81,6 +81,20 @@ describe('Given <HomeTemplate/>', () => {
       });
       waitFor(() => {
         expect(mockedNavigate).toHaveBeenCalled();
+      });
+    });
+
+    describe('When option receive action', () => {
+      it('Then a function must be triggered', () => {
+        const { getAllByTestId } = setup(mockLayoutProvider);
+        const touchableOpacity = getAllByTestId(
+          'orationes-PrayerOptionOrganism-TouchableOpacity'
+        );
+
+        touchableOpacity.forEach((el) => {
+          fireEvent.press(el);
+          expect(mockedNavigate).toHaveBeenCalled();
+        });
       });
     });
   });

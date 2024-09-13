@@ -125,20 +125,20 @@ describe('Given <HomeTemplate/>', () => {
     });
 
     it('Then it should trigger a function when the action is clicked', async () => {
-      const mockHandleDailyLiturgy = jest.fn();
+      const mockBuildDailyLiturgy = jest.fn();
       const { getByTestId } = setup(
         {
           ...mockHomeProvider,
           loading: false,
           error: true,
           data: undefined,
-          handleDailyLiturgy: mockHandleDailyLiturgy,
+          buildDailyLiturgy: mockBuildDailyLiturgy,
         },
         mockLayoutProvider
       );
       const btn = getByTestId('orationes-Button-TouchableOpacity');
       fireEvent.press(btn);
-      expect(mockHandleDailyLiturgy).toHaveBeenCalled();
+      expect(mockBuildDailyLiturgy).toHaveBeenCalled();
     });
   });
 
