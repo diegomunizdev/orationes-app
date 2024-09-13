@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { Theme } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
-import MenuDrawer from '../../molecules/MenuDrawer/MenuDrawer';
+import MenuDrawerMolecule from '../../molecules/MenuDrawer/MenuDrawerMolecule';
 import { FontSizeType } from '../../../infra/theme/theme';
 
 export type DrawerNavigationOrganismProps = {
@@ -57,6 +57,14 @@ export default function DrawerNavigationOrganism({
         drawer.current?.closeDrawer();
       },
     },
+    {
+      icon: 'cross-outline',
+      title: 'Milagres Eucarísticos',
+      action: () => {
+        navigation?.navigate('EucharisticMiracles');
+        drawer.current?.closeDrawer();
+      },
+    },
   ];
 
   return (
@@ -71,7 +79,7 @@ export default function DrawerNavigationOrganism({
           onPress={item.action}
           testID="orationes-DrawerNavigationOrganism-TouchableOpacity"
         >
-          <MenuDrawer title={item.title} icon={item.icon} />
+          <MenuDrawerMolecule title={item.title} icon={item.icon} />
         </TouchableOpacity>
       ))}
     </View>

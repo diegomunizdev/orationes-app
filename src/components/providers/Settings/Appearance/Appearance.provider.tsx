@@ -1,36 +1,12 @@
-import { PropsWithChildren, useCallback, useMemo, useState } from 'react';
+import { PropsWithChildren } from 'react';
 
 import { AppearanceContext } from '../../../../application/contexts/settings/appearance/appearance.context';
+import { useAppearanceProvider } from './useAppearanceProvider';
 
 export default function AppearanceProvider({
   children,
 }: PropsWithChildren): JSX.Element {
-  const [modalVisibleTheme, setModalVisibleTheme] = useState<boolean>(false);
-  const [modalVisibleFontSize, setModalVisibleFontSize] =
-    useState<boolean>(false);
-
-  const handleModalTheme = useCallback(() => {
-    setModalVisibleTheme((prevState) => !prevState);
-  }, []);
-
-  const handleModalFontSize = useCallback(() => {
-    setModalVisibleFontSize((prevState) => !prevState);
-  }, []);
-
-  const value = useMemo(
-    () => ({
-      handleModalFontSize,
-      handleModalTheme,
-      modalVisibleFontSize,
-      modalVisibleTheme,
-    }),
-    [
-      handleModalFontSize,
-      handleModalTheme,
-      modalVisibleFontSize,
-      modalVisibleTheme,
-    ]
-  );
+  const value = useAppearanceProvider();
 
   return (
     <AppearanceContext.Provider value={value}>

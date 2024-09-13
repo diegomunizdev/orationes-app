@@ -32,5 +32,5 @@ export const mockHomeProvider: HomeContextProps = {
   },
   loading: false,
   error: undefined,
-  handleDailyLiturgy: jest.fn(),
+  buildDailyLiturgy: jest.fn(),
 };

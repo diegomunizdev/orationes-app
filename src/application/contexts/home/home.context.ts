@@ -5,7 +5,7 @@ export type HomeContextProps = {
   data: DailyLiturgyProtocol | undefined;
   loading: boolean;
   error: any;
-  handleDailyLiturgy: () => Promise<void>;
+  buildDailyLiturgy: () => Promise<void>;
 };
 
 export const HomeContext = createContext<HomeContextProps>(

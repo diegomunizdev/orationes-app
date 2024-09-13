@@ -7,7 +7,7 @@ export type MenuDrawerProps = {
   icon: string;
 };
 
-export default function MenuDrawer({
+export default function MenuDrawerMolecule({
   title,
   icon,
 }: MenuDrawerProps): JSX.Element {

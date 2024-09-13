@@ -15,8 +15,8 @@ export default function Header({ title, goBack }: HeaderProps): JSX.Element {
     container: {
       flexDirection: 'row',
       paddingVertical: 15,
-      paddingHorizontal: 10,
-      gap: 10,
+      paddingHorizontal: 15,
+      gap: 15,
       alignItems: 'center',
     },
     text: {
