@@ -15,12 +15,7 @@ const mockHandleDrawer = jest.fn();
 jest.mock(
   '../../../../application/contexts/navigation/navigation.context',
   () => ({
-    ...jest.requireActual(
-      '../../../../application/contexts/navigation/navigation.context'
-    ),
-    useNavigationContext: () => ({
-      navigate: mockedNavigate,
-    }),
+    useNavigationContext: () => ({ navigate: mockedNavigate }),
   })
 );
 
@@ -64,6 +59,7 @@ describe('Given <ViewBase/>', () => {
         const btn = getByTestId(
           'orationes-HomeHeaderMolecule-navigateToSettings'
         );
+
         await act(async () => {
           fireEvent.press(btn);
         });
