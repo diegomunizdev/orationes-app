@@ -1,10 +1,10 @@
 name: Checks
 
 on:
+  pull_request:
+    types: [opened, synchronize]
   push:
     branches: [develop, 'FEATURE*', 'DEBIT*', 'REFACTOR*', 'BUGFIX*', 'HOTFIX*']
-  pull_request:
-    types: [ready_for_review, synchronize]
 
 jobs:
   typecheck:
