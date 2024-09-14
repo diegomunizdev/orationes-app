@@ -2,8 +2,7 @@ name: Tests
 
 on:
   pull_request:
-    types: [opened, synchronize]
-  push:
+    types: [ready_for_review]
     branches: [develop, 'FEATURE*', 'DEBIT*', 'REFACTOR*', 'BUGFIX*', 'HOTFIX*']
 
 jobs:
