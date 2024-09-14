@@ -3,6 +3,8 @@ name: Tests
 on:
   push:
     branches: [develop, 'FEATURE*', 'DEBIT*', 'REFACTOR*', 'BUGFIX*', 'HOTFIX*']
+  pull_request:
+    types: [ready_for_review, synchronize]
 
 jobs:
   tests:
