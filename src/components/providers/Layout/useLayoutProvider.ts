@@ -1,6 +1,7 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { DrawerLayoutAndroid } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import { LayoutContextProps } from '../../../application/contexts/layout/layout.context';
 
 export function useLayoutProvider(): LayoutContextProps {

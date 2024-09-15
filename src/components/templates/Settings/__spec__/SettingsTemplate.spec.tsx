@@ -7,18 +7,12 @@ const mockedNavigate = jest.fn();
 
 jest.mock(
   '../../../../application/contexts/navigation/navigation.context',
-  () => {
-    const actualNav = jest.requireActual(
-      '../../../../application/contexts/navigation/navigation.context'
-    );
-    return {
-      ...actualNav,
-      useNavigationContext: () => ({
-        navigate: mockedNavigate,
-        goBack: mockGoBack,
-      }),
-    };
-  }
+  () => ({
+    useNavigationContext: () => ({
+      navigate: mockedNavigate,
+      goBack: mockGoBack,
+    }),
+  })
 );
 
 describe('Given <SettingsTemplate/>', () => {

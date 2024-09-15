@@ -11,17 +11,11 @@ const mockGoBack = jest.fn();
 
 jest.mock(
   '../../../../../application/contexts/navigation/navigation.context',
-  () => {
-    const actualNav = jest.requireActual(
-      '../../../../../application/contexts/navigation/navigation.context'
-    );
-    return {
-      ...actualNav,
-      useNavigationContext: () => ({
-        goBack: mockGoBack,
-      }),
-    };
-  }
+  () => ({
+    useNavigationContext: () => ({
+      goBack: mockGoBack,
+    }),
+  })
 );
 
 const mockHandleTheme = jest.fn();

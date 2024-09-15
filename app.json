@@ -2,7 +2,7 @@
   "expo": {
     "name": "Orationes",
     "slug": "orationes-app",
-    "version": "0.2.0-alpha",
+    "version": "1.0.0-alpha",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
