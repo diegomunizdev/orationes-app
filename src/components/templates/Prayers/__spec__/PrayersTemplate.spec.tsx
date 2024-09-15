@@ -18,17 +18,9 @@ const mockedNavigate = jest.fn();
 
 jest.mock(
   '../../../../application/contexts/navigation/navigation.context',
-  () => {
-    const actualNav = jest.requireActual(
-      '../../../../application/contexts/navigation/navigation.context'
-    );
-    return {
-      ...actualNav,
-      useNavigationContext: () => ({
-        navigate: mockedNavigate,
-      }),
-    };
-  }
+  () => ({
+    useNavigationContext: () => ({ navigate: mockedNavigate }),
+  })
 );
 
 describe('Given <PrayersTemplate/>', () => {

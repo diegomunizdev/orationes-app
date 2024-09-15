@@ -8,7 +8,6 @@ import Routes from './components/views/Routes';
 
 export default function Main(): JSX.Element {
   console.info(PACKAGE_JSON.name, '\x1b[32m' + `v${PACKAGE_JSON.version}`);
-
   const configcatKey = process.env.EXPO_PUBLIC_CONFIG_CAT_KEY;
 
   return (

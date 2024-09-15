@@ -13,11 +13,11 @@ orationes-app
     ├── .github
     ├── assets
     ├── src
-    |   ├── application
-    |   ├── components
-    |   ├── domain
-    |   ├── infra
-    |   └── Main.tsx
+    │   ├── application
+    │   ├── components
+    │   ├── domain
+    │   ├── infra
+    │   └── Main.tsx
     ├── .env.template
     ├── .eslintrc.js
     ├── .gitignore
@@ -25,6 +25,7 @@ orationes-app
     ├── app.json
     ├── App.tsx
     ├── babel.config.js
+    ├── eas.json
     ├── package.json
     ├── README.md
     ├── script.sh
