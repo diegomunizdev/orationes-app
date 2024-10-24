@@ -1,6 +1,6 @@
 {
   "name": "orationes-app",
-  "version": "0.2.0-alpha",
+  "version": "1.0.0-alpha",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -58,10 +58,10 @@
     "collectCoverage": true,
     "coverageThreshold": {
       "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
+        "branches": 95,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
       }
     }
   }

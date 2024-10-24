@@ -23,12 +23,7 @@ const mockedNavigate = jest.fn();
 jest.mock(
   '../../../../application/contexts/navigation/navigation.context',
   () => ({
-    ...jest.requireActual(
-      '../../../../application/contexts/navigation/navigation.context'
-    ),
-    useNavigationContext: () => ({
-      navigate: mockedNavigate,
-    }),
+    useNavigationContext: () => ({ navigate: mockedNavigate }),
   })
 );
 

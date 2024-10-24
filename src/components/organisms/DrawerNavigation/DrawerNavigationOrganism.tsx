@@ -1,4 +1,4 @@
-import { RefObject } from 'react';
+import { RefObject, useMemo } from 'react';
 import {
   DrawerLayoutAndroid,
   StatusBar,
@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { Theme } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
+
 import MenuDrawerMolecule from '../../molecules/MenuDrawer/MenuDrawerMolecule';
 import { FontSizeType } from '../../../infra/theme/theme';
 
@@ -40,32 +41,35 @@ export default function DrawerNavigationOrganism({
     },
   });
 
-  const options = [
-    {
-      icon: 'book-open-page-variant-outline',
-      title: 'Liturgia diária',
-      action: () => {
-        navigation?.navigate('Home');
-        drawer.current?.closeDrawer();
+  const options = useMemo(
+    () => [
+      {
+        icon: 'book-open-page-variant-outline',
+        title: 'Liturgia diária',
+        action: () => {
+          navigation?.navigate('Home');
+          drawer.current?.closeDrawer();
+        },
       },
-    },
-    {
-      icon: 'hands-pray',
-      title: 'Orações',
-      action: () => {
-        navigation?.navigate('Prayers');
-        drawer.current?.closeDrawer();
+      {
+        icon: 'hands-pray',
+        title: 'Orações',
+        action: () => {
+          navigation?.navigate('Prayers');
+          drawer.current?.closeDrawer();
+        },
       },
-    },
-    {
-      icon: 'cross-outline',
-      title: 'Milagres Eucarísticos',
-      action: () => {
-        navigation?.navigate('EucharisticMiracles');
-        drawer.current?.closeDrawer();
+      {
+        icon: 'cross-outline',
+        title: 'Milagres Eucarísticos',
+        action: () => {
+          navigation?.navigate('EucharisticMiracles');
+          drawer.current?.closeDrawer();
+        },
       },
-    },
-  ];
+    ],
+    [drawer, navigation]
+  );
 
   return (
     <View
