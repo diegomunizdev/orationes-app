@@ -6,12 +6,24 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "newArchEnabled": true
+          }
+        }
+      ]
+    ],
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#FFFFFF"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -24,6 +36,9 @@
         "projectId": "5687a44f-6b1d-4479-a2ae-e90777d57097"
       }
     },
-    "owner": "diegomunizdev"
+    "owner": "diegomunizdev",
+    "ios": {
+      "bundleIdentifier": "com.diegomunizdev.orationesapp"
+    }
   }
 }
